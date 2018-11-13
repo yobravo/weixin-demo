@@ -8,9 +8,9 @@
  *  to start process
   sudo bash start.sh yourPackedJarFile.jar "-Dport=port443or80Only -DappId=yourWxAppId -DappSecret=yourWxAppSever -DserverToken=yourServerToken"
     
- *  to stop process. run ./stop.sh 
+ *  to stop process. sudo bash stop.sh 
  
- * to query process. run ./query.sh
+ * to query process. ./query.sh
  
  
  2. after deployment, in weixin management backend website. 
@@ -18,3 +18,4 @@
  *  set the TOKEN same as whatever you have defined in the system property "-DserverToken={TOKEN}" when starting up the jar.
  reference to : https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421135319
  
+可以关注订阅号： fancyquote， 然后发信息或图片留言，来查看该响应程序的自动回复
