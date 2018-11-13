@@ -2,6 +2,7 @@ package com.yobravo.handler;
 
 import com.yobravo.wx.WxPushProcessor;
 import com.yobravo.wx.WxPushService;
+import org.eclipse.jetty.util.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import weixin.popular.util.SignatureUtil;
@@ -35,6 +36,13 @@ public class WxHandler {
                               @QueryParam("timestamp") String timestamp,
                               @QueryParam("nonce") String nonce,
                               @QueryParam("echostr") String echostr) {
+        if(StringUtil.isBlank(signature) || StringUtil.isBlank(timestamp)
+                ||StringUtil.isBlank(nonce) ||StringUtil.isBlank(echostr)){
+            logger.info("The request query parameters: signature, timestamp, nonce and echostr are all required, " +
+                    "weChat server will send these when you configure the server setting in wechat backend");
+            return Response.status(Response.Status.BAD_REQUEST)
+                    .entity("The request query parameter: signature, timestamp, nonce, echostr are all required").build();
+        }
 
         if (!signature.equals(SignatureUtil.generateEventMessageSignature(serverToken, timestamp, nonce))) {
             logger.info("The request signature is invalid");
