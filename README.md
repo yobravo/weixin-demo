@@ -8,9 +8,9 @@
  *  to start process
   sudo bash start.sh yourPackedJarFile.jar "-Dport=port443or80Only -DappId=yourWxAppId -DappSecret=yourWxAppSever -DserverToken=yourServerToken"
     
- *  to stop process. run ./stop.sh 
+ *  to stop process. sudo bash stop.sh 
  
- * to query process. run ./query.sh
+ * to query process. ./query.sh
  
  
  2. after deployment, in weixin management backend website. 
