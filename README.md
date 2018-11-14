@@ -5,12 +5,12 @@
  
  Because weChat only access port 80(http) or 443(https), both need to root access to start, hence need to use sudo command:
  
- *  to start process
-  sudo bash start.sh yourPackedJarFile.jar "-Dport=port443or80Only -DappId=yourWxAppId -DappSecret=yourWxAppSever -DserverToken=yourServerToken"
+ *  to start process:
+   sudo bash start.sh yourPackedJarFile.jar "-Dport=port443or80Only -DappId=yourWxAppId -DappSecret=yourWxAppSever -DserverToken=yourServerToken"
     
- *  to stop process. sudo bash stop.sh 
+ *  to stop process:  sudo bash stop.sh 
  
- * to query process. ./query.sh
+ * to query process:  ./query.sh
  
  
  2. after deployment, in weixin management backend website. 
